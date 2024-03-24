@@ -10,23 +10,24 @@ final class RoundScore {
   RoundScore({required int strike, required int ball})
       : _strike = strike,
         _ball = ball {
-    validateBallScore();
-    validateStrikeScore();
+    _validateBallScore();
+    _validateStrikeScore();
+    _validateTotalScore();
   }
 
-  void validateBallScore() {
+  void _validateBallScore() {
     if (_ball < 0 || _ball > maxScore) {
       throw FormatException("0 이하 혹은 3이상의 볼은 존재할 수 없습니다.");
     }
   }
 
-  void validateStrikeScore() {
+  void _validateStrikeScore() {
     if (_strike < 0 || _strike > maxScore) {
       throw FormatException("0 이하 혹은 3이상의 스트라이크는 존재할 수 없습니다.");
     }
   }
 
-  void validateTotalScore() {
+  void _validateTotalScore() {
     if (_strike == 3 && _ball != 0) {
       throw FormatException("잘못된 스코어 입니다. 3스트라이크에서는 볼이 존재할 수 없습니다.");
     }
