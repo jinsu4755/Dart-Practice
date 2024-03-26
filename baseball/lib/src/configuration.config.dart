@@ -33,8 +33,8 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i3.BatterPlayer>(() => _i4.ManualBatterPlayer());
     gh.factory<_i5.BaseBallNumbersGenerator>(
         () => _i6.AutoBaseBallNumbersGenerator());
-    gh.factory<_i7.PictherPlayer>(() => _i8.ComputerPicherPlayer(
-        generator: gh<_i5.BaseBallNumbersGenerator>()));
+    gh.factory<_i7.PictherPlayer>(() =>
+        _i8.AutoPicherPlayer(generator: gh<_i5.BaseBallNumbersGenerator>()));
     gh.factory<_i9.BaseballGameManager>(() => _i9.BaseballGameManager(
           picther: gh<_i7.PictherPlayer>(),
           batter: gh<_i3.BatterPlayer>(),

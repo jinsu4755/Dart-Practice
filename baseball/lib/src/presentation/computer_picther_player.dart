@@ -4,10 +4,10 @@ import 'package:baseball/src/domain/picther_player.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: PictherPlayer)
-class ComputerPicherPlayer implements PictherPlayer {
+class AutoPicherPlayer implements PictherPlayer {
   final BaseBallNumbersGenerator _generator;
 
-  ComputerPicherPlayer({required BaseBallNumbersGenerator generator})
+  AutoPicherPlayer({required BaseBallNumbersGenerator generator})
       : _generator = generator;
 
   @override
