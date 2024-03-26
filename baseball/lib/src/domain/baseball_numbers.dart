@@ -9,7 +9,8 @@ final class BaseBallNumbers {
 
   Set<int> get _distinctAnswer => Set.from(_answer);
 
-  BaseBallNumbers.of({required List<int> numbers}) : _answer = List.unmodifiable(numbers) {
+  BaseBallNumbers.of({required List<int> numbers})
+      : _answer = List.unmodifiable(numbers) {
     _validateSize(_answer);
     _answer.forEach(_validateNumber);
   }
@@ -36,13 +37,8 @@ final class BaseBallNumbers {
   int _countBall(BaseBallNumbers otherNumbers) =>
       _distinctAnswer.intersection(otherNumbers._distinctAnswer).length;
 
-  int _countStrike(BaseBallNumbers otherNumbers) {
-    var count = 0;
-    for (var index = 0; index < requiredSize; index++) {
-      if (_answer[index] == otherNumbers._answer[index]) {
-        count++;
-      }
-    }
-    return count;
-  }
+  int _countStrike(BaseBallNumbers otherNumbers) =>
+      Iterable.generate(requiredSize)
+          .where((index) => _answer[index] == otherNumbers._answer[index])
+          .length;
 }
