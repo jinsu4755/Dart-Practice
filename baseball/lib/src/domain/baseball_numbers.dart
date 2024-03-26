@@ -7,13 +7,15 @@ final class BaseBallNumbers {
 
   final List<int> _answer;
 
+  Set<int> get _distinctAnswer => Set.from(_answer);
+
   BaseBallNumbers.of({required List<int> numbers}) : _answer = List.unmodifiable(numbers) {
     _validateSize(_answer);
     _answer.forEach(_validateNumber);
   }
 
-  void _validateSize(Iterable<int> numbers) {
-    if (numbers.toSet().length != requiredSize) {
+  void _validateSize(List<int> numbers) {
+    if (_distinctAnswer.length != requiredSize) {
       throw FormatException("BaseBallNumbers는 서로 다른 숫자 3개로 이루어져야 합니다.");
     }
   }
@@ -32,7 +34,7 @@ final class BaseBallNumbers {
   }
 
   int _countBall(BaseBallNumbers otherNumbers) =>
-      _answer.toSet().intersection(otherNumbers._answer.toSet()).length;
+      _distinctAnswer.intersection(otherNumbers._distinctAnswer).length;
 
   int _countStrike(BaseBallNumbers otherNumbers) {
     var count = 0;
