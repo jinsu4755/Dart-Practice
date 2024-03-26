@@ -38,7 +38,7 @@ final class BaseballGameManager {
 
   BaseBallNumbers _readExpectedNumbers() {
     final List<int> expectedNumbers = _batter.onRequestExpectedNumbers();
-    return BaseBallNumbers.of(expectedNumbers);
+    return BaseBallNumbers.of(numbers: expectedNumbers);
   }
 
 }

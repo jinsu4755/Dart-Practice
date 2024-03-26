@@ -10,6 +10,6 @@ final class AutoBaseBallNumbersGenerator implements BaseBallNumbersGenerator {
         (index) => BaseBallNumbers.minNumber + index);
     numbers.shuffle();
     final answerNumbers = numbers.take(BaseBallNumbers.requiredSize).toList();
-    return BaseBallNumbers.of(answerNumbers);
+    return BaseBallNumbers.of(numbers: answerNumbers);
   }
 }
