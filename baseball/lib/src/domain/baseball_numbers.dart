@@ -7,18 +7,18 @@ final class BaseBallNumbers {
 
   final List<int> _answer;
 
-  BaseBallNumbers.of(List<int> numbers) : _answer = List.unmodifiable(numbers) {
-    validateSize(_answer);
-    _answer.forEach(validateNumber);
+  BaseBallNumbers.of({required List<int> numbers}) : _answer = List.unmodifiable(numbers) {
+    _validateSize(_answer);
+    _answer.forEach(_validateNumber);
   }
 
-  void validateSize(Iterable<int> numbers) {
+  void _validateSize(Iterable<int> numbers) {
     if (numbers.toSet().length != requiredSize) {
       throw FormatException("BaseBallNumbers는 서로 다른 숫자 3개로 이루어져야 합니다.");
     }
   }
 
-  void validateNumber(int number) {
+  void _validateNumber(int number) {
     if (number > maxNumber || number < minNumber) {
       throw FormatException(
           "BaseBall Numbers 는 $minNumber ~ $maxNumber 범위에 해당해야 합니다. 잘못된 숫자: $number");
