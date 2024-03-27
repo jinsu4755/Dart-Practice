@@ -10,45 +10,65 @@ void main() {
       final BaseBallNumbers answer = BaseBallNumbers.of(numbers: [1, 2, 3]);
       final BaseBallNumbers expected = BaseBallNumbers.of(numbers: [4, 5, 6]);
       // when
-      final RoundScore score = BaseBallGame(answerNumbers: answer).play(expectedNumbers: expected);
+      final RoundScore score =
+          BaseBallGame(answerNumbers: answer).play(expectedNumbers: expected);
       // then
-      expect(score.toString(), equals(RoundScore(strike: 0, ball: 0).toString()));
+      expect(
+        score.toString(),
+        equals(RoundScore(strike: 0, ball: 0).toString()),
+      );
     });
     test('1,2,3 이 답일때 3,5,6을 예상하면 1볼이다.', () {
       // given
       final BaseBallNumbers answer = BaseBallNumbers.of(numbers: [1, 2, 3]);
       final BaseBallNumbers expected = BaseBallNumbers.of(numbers: [3, 5, 6]);
       // when
-      final RoundScore score = BaseBallGame(answerNumbers: answer).play(expectedNumbers: expected);
+      final RoundScore score =
+          BaseBallGame(answerNumbers: answer).play(expectedNumbers: expected);
       // then
-      expect(score.toString(), equals(RoundScore(strike: 0, ball: 1).toString()));
+      expect(
+        score.toString(),
+        equals(RoundScore(strike: 0, ball: 1).toString()),
+      );
     });
     test('1,2,3 이 답일때 4,5,3을 예상하면 1스트라이크이다.', () {
       // given
       final BaseBallNumbers answer = BaseBallNumbers.of(numbers: [1, 2, 3]);
       final BaseBallNumbers expected = BaseBallNumbers.of(numbers: [4, 5, 3]);
       // when
-      final RoundScore score = BaseBallGame(answerNumbers: answer).play(expectedNumbers: expected);
+      final RoundScore score =
+          BaseBallGame(answerNumbers: answer).play(expectedNumbers: expected);
       // then
-      expect(score.toString(), equals(RoundScore(strike: 1, ball: 0).toString()));
+      expect(
+        score.toString(),
+        equals(RoundScore(strike: 1, ball: 0).toString()),
+      );
     });
     test('1,2,3 이 답일때 1,5,2을 예상하면 1볼 1스트라이크이다.', () {
       // given
       final BaseBallNumbers answer = BaseBallNumbers.of(numbers: [1, 2, 3]);
       final BaseBallNumbers expected = BaseBallNumbers.of(numbers: [1, 5, 2]);
       // when
-      final RoundScore score = BaseBallGame(answerNumbers: answer).play(expectedNumbers: expected);
+      final RoundScore score =
+          BaseBallGame(answerNumbers: answer).play(expectedNumbers: expected);
       // then
-      expect(score.toString(), equals(RoundScore(strike: 1, ball: 1).toString()));
+      expect(
+        score.toString(),
+        equals(RoundScore(strike: 1, ball: 1).toString()),
+      );
     });
     test('1,2,3 이 답일때 1,2,3을 예상하면 3스트라이크이다.', () {
       // given
       final BaseBallNumbers answer = BaseBallNumbers.of(numbers: [1, 2, 3]);
       final BaseBallNumbers expected = BaseBallNumbers.of(numbers: [1, 2, 3]);
       // when
-      final RoundScore score = BaseBallGame(answerNumbers: answer).play(expectedNumbers: expected);
+      final RoundScore score =
+          BaseBallGame(answerNumbers: answer).play(expectedNumbers: expected);
       // then
-      expect(score.toString(), equals(RoundScore(strike: 3, ball: 0).toString()));
+      expect(
+        score.toString(),
+        equals(RoundScore(strike: 3, ball: 0).toString()),
+      );
     });
   });
 }

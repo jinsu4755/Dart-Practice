@@ -1,5 +1,5 @@
-import 'package:baseball/src/domain/baseball_numbers.dart';
-import 'package:baseball/src/domain/round_score.dart';
+import 'baseball_numbers.dart';
+import 'round_score.dart';
 
 final class BaseBallGame {
 
@@ -7,7 +7,7 @@ final class BaseBallGame {
 
   BaseBallGame({required this.answerNumbers});
 
-  RoundScore play({required BaseBallNumbers expectedNumbers}) {
+  RoundScore play({required final BaseBallNumbers expectedNumbers}) {
     return expectedNumbers.scoreFrom(answerNumbers);
   }
 }

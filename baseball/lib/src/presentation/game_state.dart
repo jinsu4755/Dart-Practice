@@ -6,8 +6,10 @@ enum GameState {
 
   const GameState({required this.flag});
 
-  static GameState of(int flag) {
-    return GameState.values.firstWhere((element) => element.flag == flag,
-        orElse: () => (throw ArgumentError("Invalid flag: $flag")));
+  static GameState of(final int flag) {
+    return GameState.values.firstWhere(
+      (final element) => element.flag == flag,
+      orElse: () => (throw ArgumentError("Invalid flag: $flag")),
+    );
   }
 }

@@ -12,9 +12,15 @@ void main() {
       var expectedNumbers = [1, 1, 2];
       // expect
       expect(
-          () => BaseBallNumbers.of(numbers: expectedNumbers),
-          throwsA(isFormatException.having((exception) => exception.message,
-              "message", "BaseBallNumbers는 서로 다른 숫자 3개로 이루어져야 합니다.")));
+        () => BaseBallNumbers.of(numbers: expectedNumbers),
+        throwsA(
+          isFormatException.having(
+            (final exception) => exception.message,
+            "message",
+            "BaseBallNumbers는 서로 다른 숫자 3개로 이루어져야 합니다.",
+          ),
+        ),
+      );
     });
 
     test("1,1,1 로는 숫자 목록을 만들 수 없다.", () {
@@ -22,17 +28,29 @@ void main() {
       var expectedNumbers = [1, 1, 1];
       // expect
       expect(
-          () => BaseBallNumbers.of(numbers: expectedNumbers),
-          throwsA(isFormatException.having((exception) => exception.message,
-              "message", "BaseBallNumbers는 서로 다른 숫자 3개로 이루어져야 합니다.")));
+        () => BaseBallNumbers.of(numbers: expectedNumbers),
+        throwsA(
+          isFormatException.having(
+            (final exception) => exception.message,
+            "message",
+            "BaseBallNumbers는 서로 다른 숫자 3개로 이루어져야 합니다.",
+          ),
+        ),
+      );
     });
   });
 
   test("1~9 범위를 넘은 숫자가 있다면 숫자 목록을 만들 수 없다.", () {
     expect(
-        () => BaseBallNumbers.of(numbers: [11, 1, 2]),
-        throwsA(isFormatException.having((exception) => exception.message,
-            "message", "BaseBall Numbers 는 1 ~ 9 범위에 해당해야 합니다. 잘못된 숫자: 11")));
+      () => BaseBallNumbers.of(numbers: [11, 1, 2]),
+      throwsA(
+        isFormatException.having(
+          (final exception) => exception.message,
+          "message",
+          "BaseBall Numbers 는 1 ~ 9 범위에 해당해야 합니다. 잘못된 숫자: 11",
+        ),
+      ),
+    );
   });
 
   group("두 숫자 야구 숫자들을 비교하여 스코어를 얻을 수 있다.", () {

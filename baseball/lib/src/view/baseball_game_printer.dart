@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:baseball/src/domain/round_score.dart';
+import '../domain/round_score.dart';
 
 final class BaseBallGamePrinter {
   static const _startMessage = "숫자 야구 게임을 시작합니다.";
@@ -16,7 +16,7 @@ final class BaseBallGamePrinter {
   static void printReqeustRestartOrEndMessage() =>
       stdout.writeln(_requestRestartOrEndMessage);
 
-  static void printRoundScore(RoundScore roundScore) =>
+  static void printRoundScore(final RoundScore roundScore) =>
       stdout.writeln(roundScore);
 
   static void printGameWinnginMessage() => stdout.writeln(_gameWinningMessage);

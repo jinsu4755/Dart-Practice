@@ -7,8 +7,10 @@ final class RoundScore {
   final int _ball;
   final int _strike;
 
-  RoundScore({required int strike, required int ball})
-      : _strike = strike,
+  RoundScore({
+    required final int strike,
+    required final int ball,
+  })  : _strike = strike,
         _ball = ball {
     _validateBallScore();
     _validateStrikeScore();

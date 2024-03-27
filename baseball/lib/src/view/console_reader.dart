@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'dart:io';
 
 final class ConsoleReader {
-  
-  static const String _readLineFormatExceptionMessage = "입력을 읽을 수 없습니다. 다시 시도해주세요";
+  static const String _readLineFormatExceptionMessage =
+      "입력을 읽을 수 없습니다. 다시 시도해주세요";
 
   static String read() => _readLine();
 
@@ -16,5 +16,5 @@ final class ConsoleReader {
       stdin.readLineSync(encoding: utf8) ??
       (throw FormatException(_readLineFormatExceptionMessage));
 
-  static List<String> _splitNumberWords(String value) => value.split(" ");
+  static List<String> _splitNumberWords(final String value) => value.split(" ");
 }
